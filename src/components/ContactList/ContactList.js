@@ -6,7 +6,11 @@ import ElementContacts from "../ElementContacts";
 const ContactList = ({ contacts, onDelContact }) => {
   return (
     <ul className={style.ulStyle}>
-      <ElementContacts contacts={contacts} onDelContact={onDelContact} />
+      {contacts.map((contact) => (
+        <li key={contact.id}>
+          <ElementContacts contacts={contact} onDelContact={onDelContact} />
+        </li>
+      ))}
     </ul>
   );
 };
